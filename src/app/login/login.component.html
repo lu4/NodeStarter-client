@@ -1,0 +1,14 @@
+<div *ngIf="connected">
+    <div class="text-center">You are logged in as "{{ username || 'anonymous' }}", would you like to <a (click)="handleLogout()">logout</a>?</div>
+</div>
+<div *ngIf="!connected">
+    <div *ngIf="error" class="alert alert-danger">
+        <p>Invalid credentials</p>
+    </div>
+    <p>Please enter your credentials to proceed.</p>
+    <input [ngModel]="model.username" (ngModelChange)="model.username = $event" class="form-control input-lg" type="text" name="login"
+        placeholder="Username" />
+    <input [ngModel]="model.password" (ngModelChange)="model.password = $event" class="form-control input-lg" type="password"
+        name="password" placeholder="Password" />
+    <input class="btn" type="submit" value="Login" (click)="handleLogin(model.username, model.password)">
+</div>

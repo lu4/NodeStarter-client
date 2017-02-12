@@ -1,0 +1,15 @@
+{
+  "/engine.io/*": {
+    "target": "https://localhost:3333/engine.io/",
+    "ws": true,
+    "secure": false,
+    "logLevel": "debug",
+    "rejectUnauthorized": false
+  },
+  "/api/*": {
+    "target": "https://localhost:3333/",
+    "secure": false,
+    "logLevel": "debug",
+    "rejectUnauthorized": false
+  }
+}

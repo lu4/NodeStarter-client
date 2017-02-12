@@ -1,0 +1,13 @@
+Authentication status:
+<span *ngIf="loggedin">Logged in</span>
+<span *ngIf="!loggedin">Anonymous</span>
+<br />
+<div *ngIf="authenticated">
+  <p><a (click)="handleLogout()">Logout</a></p>
+  <p><a (click)="navigateTo('/home')">Navigate to home</a></p>
+  <p><a (click)="navigateTo('/gameselection')">Join Game</a></p>
+</div>
+<div *ngIf="!authenticated">
+  <p><a (click)="navigateTo('/login')">Navigate to login</a></p>
+  <p><a (click)="navigateTo('/register')">Navigate to register</a></p>
+</div>
